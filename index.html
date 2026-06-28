@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <style>
+        /* ===== STYLES ORIGINAUX (inchangés) ===== */
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -20,9 +21,6 @@
             box-shadow: 0 5px 20px rgba(25, 5, 5, 0.1);
             margin-left: 220px;
             width: 750px;
-            
-          
-
         }
         .project-card:hover {
             transform: translateY(-10px);
@@ -41,23 +39,122 @@
             padding: 20px 0;
             margin-top: 50px;
         }
-
         .carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: #6c5ce7; /* Violet */
-    border-radius: 50%;
-    padding: 15px;
-    background-size: 50%;
-    margin-left: 75px;
-}
+        .carousel-control-next-icon {
+            background-color: #6c5ce7;
+            border-radius: 50%;
+            padding: 15px;
+            background-size: 50%;
+            margin-left: 75px;
+        }
+        .container1 {
+            margin-left: 150px;
+        }
+        .competences {
+            margin-left: 350px;
+        }
 
-.container1{
-    margin-left: 150px;
-}
+        /* ===== RESPONSIVE OVERRIDES ===== */
 
-.competences{
-    margin-left: 350px;
-}
+        /* --- Cartes projets : reset des marges/largeurs fixes --- */
+        @media (max-width: 1200px) {
+            .project-card {
+                margin-left: 0 !important;
+                width: 100% !important;
+            }
+            .container1 {
+                margin-left: 0 !important;
+                padding: 0 15px;
+            }
+            .competences {
+                margin-left: 0 !important;
+                text-align: center;
+            }
+        }
+
+        /* --- Navbar : centrer les liens sur mobile --- */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                margin-right: 0 !important;
+            }
+            .navbar-nav {
+                text-align: center;
+            }
+        }
+
+        /* --- Hero : réduire padding sur mobile --- */
+        @media (max-width: 576px) {
+            .hero {
+                padding: 60px 15px;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero .lead {
+                font-size: 1rem;
+            }
+            .hero .btn {
+                display: block;
+                width: 80%;
+                margin: 10px auto 0 auto;
+            }
+            .hero .btn.ms-2 {
+                margin-left: auto !important;
+            }
+        }
+
+        /* --- Section projets : empiler les colonnes --- */
+        #projets .row > div {
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            #projets .row > div {
+                width: 50%;
+            }
+        }
+
+        /* --- Wrapper des projets 2 et 3 : reset inline div --- */
+        #projets > .container > .row > div > div.col-md-6,
+        #projets > .container > .row > div > div.col-md-6.col-lg-4 {
+            width: 100% !important;
+            padding: 0;
+        }
+
+        /* --- Compétences : centrer et adapter la grille --- */
+        #competences .row {
+            justify-content: center;
+        }
+
+        @media (max-width: 576px) {
+            #competences .col-md-4 {
+                width: 50% !important;
+            }
+        }
+
+        /* --- Carousel arrows : reset margin sur mobile --- */
+        @media (max-width: 576px) {
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                margin-left: 0 !important;
+                padding: 10px;
+            }
+        }
+
+        /* --- Contact card : pleine largeur sur mobile --- */
+        @media (max-width: 576px) {
+            #contact .col-md-6 {
+                width: 95% !important;
+            }
+        }
+
+        /* --- Générique : éviter le débordement horizontal --- */
+        body {
+            overflow-x: hidden;
+        }
+        img {
+            max-width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -171,7 +268,7 @@
                                 <i class="bi bi-github"></i> Code
                             </a>
                             
-                             <a href="https://jade-starburst-1e1c67.netlify.app/" target="_blank" class="btn btn-sm btn-demo" style="color: blue; border: solid;" >
+                             <a href="https://brilliant-raindrop-a6be2b.netlify.app/" target="_blank" class="btn btn-sm btn-demo" style="color: blue; border: solid;" >
                                 <i class="bi bi-box-arrow-up-right"></i> Démo
                             </a>
                             </div>
